@@ -96,6 +96,17 @@ nav.fixed {
     background-color: #000;
    font-weight: 700;
   }
+
+  .burger {
+    display: none;
+  }
+  
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+  }
   
 
 
@@ -592,14 +603,66 @@ nav.fixed {
 } 
 
 
-@media only screen and (max-width: 768px) {
-  /* CSS rules for screens up to 768px wide (most phones and some tablets) */
+@media screen and (max-width: 1024px) {
+  .pages {
+    width: 60%;
+  }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* CSS rules for screens between 768px and 1024px wide (most tablets) */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .logo img {
+    width: 70px;
+  }
+  .button {
+    display: none;
+  }
+  .pages {
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 20px;
+    border-radius: 60px 0 0 60px;
+    position: fixed;
+    right: 10px;
+    height: 60vh;
+    top:90px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    z-index: 30;
+  }
+  .pages li {
+    opacity: 0;
+    border-bottom: 1px solid #fff;
+    margin-top: 30px;
+  }
+
+  .pages li:hover {
+    border-bottom: 1px solid #f7b500;
+
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
 }
 
-@media only screen and (min-width: 1024px) {
-  /* CSS rules for screens wider than 1024px (most laptops and desktops) */
+.nav-active {
+  transform: translateX(0%);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
